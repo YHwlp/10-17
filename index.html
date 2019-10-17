@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>//// for(var i=0;i<100;i++){
+		// 	if(i<10){
+		// 		document.write('0');
+		// 	}
+		// 	document.write(i);
+		// 	if(i%==9){
+		// 		document.write('<br>');
+		// 	}
+		// 	document.write(' ');
+		// }
+		var a='';
+		var b='';
+		for(var i=1;i<=100;i++){
+			if(i%2==0){
+				a=a+i;
+			}else{
+				b=b+i;
+			}
+		}
+			document.write(a+"   ");
+			document.write('<br/>');
+			document.write(b+"   ");
+			document.write('<hr>');
+
+			var a='';
+			var b='';
+			var c='';
+			for(i=1;i<=100;i++){
+				document.write(' '+i);
+				if(i%3==0){
+					document.write('a');
+					a++;
+				}
+				if(i%5==0){
+					document.write('b');
+					b++;
+				}
+				if(i%3==0 && i%5==0){
+					document.write('c');
+					c++
+				}
+			}
+			document.write('<br/>');
+			document.write('a='+a+'  '+'b='+b+'  '+'c='+c);
+	</script>
+</body>
+</html>
