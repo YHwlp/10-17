@@ -5,33 +5,82 @@
 	<title>Document</title>
 </head>
 <body>
-	<script>//// for(var i=0;i<100;i++){
-		// 	if(i<10){
-		// 		document.write('0');
-		// 	}
-		// 	document.write(i);
-		// 	if(i%==9){
-		// 		document.write('<br>');
-		// 	}
-		// 	document.write(' ');
-		// }
+	a:<input type="text" id="a">
+	b:<input type="text" id="b">
+	<input type="button" value="比较" id="bj">
+	<div id="jg"></div>
+	<script>
+		var inputa=document.getElementById('a');
+		var inputb=document.getElementById('b');
+		var bj=document.getElementById('bj');
+		var jg=document.getElementById('jg');
+		bj.onclick=function(){
+			var ia=inputa.value;
+			var ib=inputb.value;
+			if(ia!='' && ib!=''){
+				if(!isNaN(ia) && !isNaN(ib)){
+				  var a=parseFloat(ia);//将字符串转换为浮点数
+				  var b=parseFloat(ib);
+				  var c=a>b?'大':a<b?'小':'等';
+				  // document.write('a'+c+'于b');
+				  jg.innerHTML='a'+c+'于b';
+			  }else{
+				  jg.innerHTML='a或b不是数字';
+			  }
+			}else{
+				jg.innerHTML='a或b没有填写';
+			}
+		}
+		document.write('<br>');
+	 document.write('第一种写法：');
+	 document.write('<br/>');
+	 function check(n){
+			return n<10?'0'+n:n;
+		}
+		for(var i=0;i<100;i++){
+			document.write(check(i)+(i%10==9?'<br/>':' '));
+		}
+		document.write('第二种写法：');
+		document.write('<br/>');
+		function check(n){
+			return n<10?'0'+n:n;
+		}
+		for(var i=0;i<100;i++){
+			if(i%10==0 && i>0){
+				document.write('<br/>');
+			}
+			document.write(check(i)+(' '));
+		}
+		document.write('<br/>');
+		document.write('第三种写法');
+		document.write('<br/>');
+		var odd=[];
+		var even=[];
+		for(var i=1;i<100;i++){
+			if(i%2){
+				odd.push(i);
+			}else{
+				even.push(i);
+			}
+		}
+		document.write(even.join(' ')+'<hr>'+odd.join(' '));
+		document.write('<hr>');
 		var a='';
 		var b='';
 		for(var i=1;i<=100;i++){
 			if(i%2==0){
-				a=a+i;
+				a+=i+' ';
 			}else{
-				b=b+i;
+				b+=i+' ';
 			}
 		}
-			document.write(a+"   ");
+			document.write(a);
 			document.write('<br/>');
-			document.write(b+"   ");
 			document.write('<hr>');
-
-			var a='';
-			var b='';
-			var c='';
+			document.write(b);
+			document.write('<hr>');	var a=0;
+			var b=0;
+			var c=0;
 			for(i=1;i<=100;i++){
 				document.write(' '+i);
 				if(i%3==0){
@@ -49,6 +98,7 @@
 			}
 			document.write('<br/>');
 			document.write('a='+a+'  '+'b='+b+'  '+'c='+c);
+
 	</script>
 </body>
 </html>
